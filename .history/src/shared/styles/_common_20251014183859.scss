@@ -1,0 +1,93 @@
+@use 'variables' as *;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  font-style: normal;
+  font-size: var(--fs-body);
+  color: var(--body-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  font-size: var(--fs-a);
+  color: var(--body-color);
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+  transition: all 0.3s ease-out 0s;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-base);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  color: var(--color-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-h2);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  color: var(--color-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  color: var(--color-h4);
+}
+
+p {
+  font-size: var(--fs-p);
+  color: var(--color-description);
+  line-height: 1.6;
+}
+
+.color1 {
+  background-color: #5f6fff;
+}
+.color2 {
+  background-color: #38bdf8;
+}
+.color3 {
+  background-color: #10b981;
+}
+
+.container {
+  max-width: 117rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

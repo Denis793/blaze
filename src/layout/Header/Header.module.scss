@@ -1,0 +1,95 @@
+@use '@/shared/styles/variables' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.navbarArea {
+  padding: 1.5rem 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 8rem;
+}
+
+.toggler {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  @media (max-width: $breakpoint-m) {
+    display: block;
+  }
+}
+
+.togglerIcon {
+  display: block;
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: var(--color-h2);
+  margin: 0.5rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuBar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: $breakpoint-m) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+  }
+}
+
+.menuBar.open {
+  display: block;
+}
+
+.navbarNav {
+  display: flex;
+  list-style: none;
+  margin-right: 3rem;
+
+  @media (max-width: $breakpoint-m) {
+    flex-direction: column;
+    padding: 1rem 3rem;
+  }
+}
+
+.navItem {
+  margin: 0 1.5rem;
+
+  @media (max-width: $breakpoint-m) {
+    margin: 0;
+    a {
+      padding: 1rem 0;
+    }
+  }
+}
+
+.headerBtn {
+  margin-left: 2rem;
+
+  @media (max-width: $breakpoint-m) {
+    display: none;
+  }
+}

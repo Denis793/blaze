@@ -1,0 +1,54 @@
+@use '@/shared/styles/variables' as *;
+
+.heroSection {
+  padding-top: 18rem;
+  padding-bottom: 12rem;
+  background: url('../../assets/images/hero/hero-bg.svg');
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(auto, 50rem) 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (max-width: $breakpoint-l) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $breakpoint-m) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.heroContent {
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+
+    span {
+      color: var(--primary-color);
+    }
+  }
+  p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.heroImage {
+  text-align: right;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: $breakpoint-m) {
+    order: -1;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}

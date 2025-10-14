@@ -1,0 +1,33 @@
+@use '@/shared/styles/variables' as *;
+
+.button {
+  display: inline-block;
+  padding: 1.5rem 3.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  line-height: 1.2;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+  &.hover:hover {
+    box-shadow: 0 1rem 3rem rgba(85, 88, 255, 0.5);
+  }
+}
+
+.border {
+  border: 0.1rem solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+  }
+}

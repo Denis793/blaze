@@ -1,0 +1,35 @@
+@use '@/shared/styles/variables' as *;
+
+.brandsSection {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: $breakpoint-s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.singleBrands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

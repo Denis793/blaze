@@ -1,0 +1,15 @@
+@use '@/shared/styles/variables' as *;
+
+.navLink {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--body-color);
+  padding: 1rem 0;
+  position: relative;
+
+  &:hover,
+  &.active {
+    color: var(--primary-color);
+  }
+}

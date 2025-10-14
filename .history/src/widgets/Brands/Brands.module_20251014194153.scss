@@ -1,0 +1,47 @@
+@use '@/shared/styles/variables' as *;
+
+.brandsSection {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  overflow: hidden; /* Запобігає появі горизонтальної смуги прокрутки */
+}
+
+/* 1. Обмежувальний контейнер, що приховує дублікати */
+.sliderTrackWrapper {
+  overflow: hidden;
+}
+
+/* 2. Контейнер, який буде прокручуватися */
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 10s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.singleBrands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  min-width: 25rem;
+
+  img {
+    max-width: 100%;
+    max-height: 50px;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
