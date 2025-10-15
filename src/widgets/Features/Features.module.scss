@@ -1,1 +1,115 @@
 @use '@/shared/styles/variables' as *;
+
+.featureWrapper {
+  padding: var(--section-padding) 0;
+  overflow: hidden;
+  margin: var(--spacing-4xl) 0;
+}
+
+.featureSection {
+  margin-bottom: var(--spacing-6xl);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @media (min-width: $breakpoint-l) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.reverseOrder {
+  @media (min-width: $breakpoint-l) {
+    grid-template-areas: 'content image';
+    & > .featureImageContainer {
+      grid-area: image;
+    }
+    & > .featureContent {
+      grid-area: content;
+      grid-template-columns: 2fr;
+    }
+  }
+}
+
+.featureImageContainer {
+  text-align: center;
+  order: -1;
+
+  @media (min-width: $breakpoint-l) {
+    order: initial;
+  }
+}
+
+.featureImage {
+  max-width: 100%;
+  height: auto;
+  margin: var(--spacing-3xl) 0;
+
+  &One {
+    transform: translateX(0);
+    @media (min-width: $breakpoint-l) {
+      transform: translateX(-80%);
+    }
+  }
+
+  &Two {
+    transform: translateX(80%);
+  }
+}
+
+.sectionTitle,
+.featureContentSmall {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-l);
+  margin-bottom: var(--spacing-l);
+}
+
+.featuresList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+  margin-top: var(--spacing-2xl);
+}
+
+.singleFeatureListItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.featureIconSmall {
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: var(--text-color-button);
+  padding: var(--spacing-2xl);
+
+  @media (min-width: $breakpoint-m) {
+    width: 7rem;
+    height: 7rem;
+    font-size: 3rem;
+  }
+}
+
+.color1 {
+  background-color: var(--accent-color1);
+}
+
+.color2 {
+  background-color: var(--accent-color2);
+}
+
+.color3 {
+  background-color: var(--accent-color3);
+}

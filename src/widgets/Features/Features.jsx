@@ -6,6 +6,8 @@ import FeatureImageOne from '@/assets/images/feature/feature-image-1.svg';
 import FeatureImageTwo from '@/assets/images/feature/feature-image-2.svg';
 import styles from './Features.module.scss';
 
+const BASE_INDENT_REM = 2;
+
 export const Features = () => {
   return (
     <>
@@ -27,7 +29,7 @@ export const Features = () => {
                     amet.
                   </p>
 
-                  <Button href="#0" variant="border" className="btn-hover">
+                  <Button href="#0" variant="border">
                     Discover More
                   </Button>
                 </div>
@@ -46,13 +48,17 @@ export const Features = () => {
 
                   <div className={styles.featuresList}>
                     {smallFeaturesList.map((feature, index) => (
-                      <div key={index} className={styles.singleFeatureListItem}>
+                      <div
+                        key={index}
+                        className={styles.singleFeatureListItem}
+                        style={{ marginLeft: `${index * 2 * BASE_INDENT_REM}rem` }}
+                      >
                         <div className={classNames(styles.featureIconSmall, styles[feature.color])}>
                           <i className={`lni ${feature.iconClass}`}></i>
                         </div>
                         <div className={styles.featureContentSmall}>
                           <h4>{feature.title}</h4>
-                          <p>{feature.description}</p>
+                          <p className="description">{feature.description}</p>
                         </div>
                       </div>
                     ))}
