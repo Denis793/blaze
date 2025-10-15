@@ -1,5 +1,11 @@
 @use '@/shared/styles/variables' as *;
 
+.serviceBoxes {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-2xl) 0;
+}
+
 .services {
   text-align: center;
   max-width: 100%;
@@ -8,9 +14,13 @@
   }
 }
 
+.sectionTitle {
+  text-align: center;
+}
+
 .serviceIcon {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: var(--radius-full);
   display: flex;
   justify-content: center;
@@ -24,6 +34,10 @@
     height: 7rem;
     font-size: 3.5rem;
   }
+}
+
+.serviceContent h4 {
+  margin: var(--spacing-2xl) 0;
 }
 
 .color1 {

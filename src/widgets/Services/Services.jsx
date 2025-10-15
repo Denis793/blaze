@@ -17,6 +17,7 @@ export const Services = () => {
               <div className={clsx(styles.serviceIcon, styles[service.color])}>
                 <i className={`lni ${service.iconClass}`}></i>
               </div>
+
               <div className={styles.serviceContent}>
                 <h4>{service.title}</h4>
                 <p className="description">{service.description}</p>
