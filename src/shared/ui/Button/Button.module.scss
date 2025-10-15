@@ -1,33 +1,79 @@
 @use '@/shared/styles/variables' as *;
 
 .button {
-  display: inline-block;
-  padding: 1.5rem 3.5rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-m) var(--spacing-2xl);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  border-radius: var(--radius-s);
   text-align: center;
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition-fast);
   cursor: pointer;
   text-decoration: none;
   border: none;
-  line-height: 1.2;
+  user-select: none;
+  width: fit-content;
+
+  @media (min-width: $breakpoint-m) {
+    padding: var(--spacing-l) var(--spacing-2xl);
+    font-size: var(--fs-input);
+  }
 }
 
 .primary {
   background-color: var(--primary-color);
-  color: var(--heading-color);
-  &.hover:hover {
-    box-shadow: 0 1rem 3rem rgba(85, 88, 255, 0.5);
+  color: var(--text-color-button);
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+    box-shadow: var(--shadow-main);
   }
 }
 
 .border {
-  border: 0.1rem solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   background-color: transparent;
   color: var(--primary-color);
+
   &:hover {
     background-color: var(--primary-color);
-    color: var(--heading-color);
+    color: var(--text-color-button);
   }
+}
+
+.round {
+  border-radius: var(--radius-full);
+}
+
+.arrowIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.arrowRight,
+.arrowLeft,
+.arrowUp,
+.arrowDown {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-s);
+}
+
+.arrowRight {
+  flex-direction: row;
+}
+
+.arrowLeft {
+  flex-direction: row-reverse;
+}
+
+.arrowUp {
+  flex-direction: column-reverse;
+}
+
+.arrowDown {
+  flex-direction: column;
 }

@@ -1,44 +1,110 @@
 :root {
-  /* COLORS */
-  --primary-color: #5f6fff;
-  --heading-color: #ffffff;
-  --title-color: #161616;
-  --body-color: rgba(0, 0, 0, 0.7);
-  --header-color: #fff;
-  --light-bg: #f5f5f5;
-  --border-color: #eee;
-  --link-color: #000;
-  --link-hover-color: var(--primary-color);
+  --ff-main: 'Sen', sans-serif;
 
-  /* FONTS */
-  --font-family-base: 'Sen', sans-serif;
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-  --font-weight-extra-bold: 800;
+  --fs-body: 10px;
+  --fs-base: 1.25rem;
+  --fs-nav-mobile: 2rem;
+  --fs-nav-laptop: 1rem;
+  --fs-nav-desktop: 1.2rem;
 
-  /* SPACING */
-  --spacer-md: 1rem;
-  --section-padding-y: 12rem;
+  --fs-h1: 4rem;
+  --fs-h2: 3rem;
+  --fs-h3: 2rem;
+  --fs-h4: 1.5rem;
+  --fs-description: 1rem;
+  --fs-input: 1.2rem;
+  --fs-error-code: 10rem;
 
-  /* FONT SIZES */
-  --fs-body: 1.6rem;
-  --fs-a: 1.6rem;
-  --fs-p: 1.6rem;
-  --fs-h1: 5rem;
-  --fs-h2: 4rem;
-  --fs-h3: 2.8rem;
-  --fs-h4: 1.8rem;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
-  /* HEADING COLORS */
-  --color-h1: #191822;
-  --color-h2: #191822;
-  --color-h3: #191822;
-  --color-h4: #292929;
+  --toggle-size: 1.5rem;
+  --social-size: 1.5rem;
 
-  --color-description: rgba(0, 0, 0, 0.7);
+  /* === Colors (light) === */
+  --primary-color: #005ff7;
+  --primary-color-hover: #0051ff;
+
+  --text-color-default: #1d2125;
+  --text-color-heading: #111827;
+  --text-color-subheading: #1f2937;
+  --text-color-contrast: #292929;
+  --text-color-button: #fff;
+  --text-color-link: #000000;
+  --text-color-link-hover: #ffffff;
+  --error-color: #ff0000b4;
+  --success-color: #00ad26;
+
+  --color-h2: #202020;
+  --color-h3: #303030;
+  --color-h4: #414141;
+  --color-h5: #000;
+  --color-description: #35373a;
+
+  --bg-page: #fff;
+  --bg-section: #f4f7fa;
+  --bg-card: #fff;
+  --bg-header: rgba(255, 255, 255, 0.6);
+
+  --border-color: #d8e1ed;
+  --burger-color: #111827;
+  --border-error: #ff0000c7;
+  --border-success: #00ad26;
+
+  /* === Accent Colors === */
+  --accent-color1: #4254f5;
+  --accent-color2: #ff3d77;
+  --accent-color3: #f8d847;
+
+  --social-color: #fff;
+
+  /* === Shadows === */
+  --shadow-main: 0 0px 12px rgba(0, 0, 0, 0.2);
+  --shadow-overlay: 0 0px 12px rgba(0, 0, 0, 0.5);
+
+  /* === Overlay Colors === */
+  --overlay-color: #fff;
+
+  /* === Radius === */
+  --radius-s: 0.5rem;
+  --radius-m: 1rem;
+  --radius-l: 2rem;
+  --radius-full: 50%;
+
+  /* === Spacing === */
+  --spacing-s: 0.5rem;
+  --spacing-m: 0.75rem;
+  --spacing-l: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 10rem;
+
+  --gap-s: 0.5rem;
+  --gap-m: 1rem;
+  --gap-l: 1.5rem;
+  --gap-xl: 2rem;
+  --gap-2xl: 4rem;
+
+  --header-logo-height: 1rem;
+
+  /* === Layout === */
+  --container-max-width: 1280px;
+  --description-width: 600px;
+
+  /* === Z-index === */
+  --z-index-behind: -1;
+  --z-index-base: 1;
+  --z-index-overlay: 900;
+  --z-header: 999;
+  --z-index-mobileMenu: 1000;
+
+  /* === Transitions === */
+  --transition-base: all 1s ease;
+  --transition-fast: all 0.2s ease-in-out;
 }
 
-$breakpoint-s: 76.8rem;
-$breakpoint-m: 99.2rem;
-$breakpoint-l: 120rem;
-$breakpoint-xl: 140rem;
+$breakpoint-m: 840px;
+$breakpoint-l: 1320px;

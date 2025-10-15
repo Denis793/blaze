@@ -1,24 +1,41 @@
+import clsx from 'clsx';
+import { forwardRef } from 'react';
 import styles from './Button.module.scss';
-import classNames from 'classnames';
 
-export const Button = ({ children, variant = 'primary', href, className, ...props }) => {
-  const buttonClasses = classNames(styles.button, className, {
-    [styles.primary]: variant === 'primary',
-    [styles.border]: variant === 'border',
-    [styles.hover]: variant === 'hover',
-  });
+export const Button = forwardRef(
+  (
+    {
+      children,
+      variant = 'primary',
+      type = 'button',
+      round = false,
+      icon = null,
+      direction = null,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    const variantClasses = variant
+      .split(' ')
+      .map((v) => styles[v])
+      .filter(Boolean);
 
-  if (href) {
     return (
-      <a href={href} className={buttonClasses} {...props}>
-        {children}
-      </a>
+      <button
+        ref={ref}
+        type={type}
+        className={clsx(
+          styles.button,
+          variantClasses,
+          round && styles.round,
+          direction && styles[`arrow${direction[0].toUpperCase() + direction.slice(1)}`],
+          className
+        )}
+        {...props}
+      >
+        {icon ? <img src={icon} alt="icon" className={styles.arrowIcon} /> : children}
+      </button>
     );
   }
-
-  return (
-    <button className={buttonClasses} {...props}>
-      {children}
-    </button>
-  );
-};
+);

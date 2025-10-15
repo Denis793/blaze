@@ -1,21 +1,7 @@
 import styles from './Footer.module.scss';
 import { Logo } from '@/shared/ui/Logo';
 import { Button } from '@/shared/ui/Button';
-
-const menuItems = [
-  { href: '#0', label: 'Home' },
-  { href: '#0', label: 'About' },
-  { href: '#0', label: 'Service' },
-  { href: '#0', label: 'Testimonial' },
-  { href: '#0', label: 'Contact' },
-];
-
-const socialLinks = [
-  { icon: 'lni-facebook-filled', href: '#0' },
-  { icon: 'lni-linkedin-original', href: '#0' },
-  { icon: 'lni-instagram-filled', href: '#0' },
-  { icon: 'lni-twitter-filled', href: '#0' },
-];
+import { footerItems, socialLinks } from '@/shared/config/menuConfig';
 
 export const Footer = () => {
   return (
@@ -30,48 +16,6 @@ export const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste
               ipsum officiis deleniti asperiores sit.
             </p>
-          </div>
-
-          <div className={styles.footerWidget}>
-            <h4 className={styles.widgetTitle}>Features</h4>
-            <ul className={styles.widgetLinks}>
-              <li>
-                <a href="#0">Creative Design</a>
-              </li>
-              <li>
-                <a href="#0">Retina Ready</a>
-              </li>
-              <li>
-                <a href="#0">Pug File Included</a>
-              </li>
-              <li>
-                <a href="#0">Easy to Use</a>
-              </li>
-              <li>
-                <a href="#0">Aweome Features</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className={styles.footerWidget}>
-            <h4 className={styles.widgetTitle}>Support</h4>
-            <ul className={styles.widgetLinks}>
-              <li>
-                <a href="#0">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#0">Terms of Use</a>
-              </li>
-              <li>
-                <a href="#0">FAQ</a>
-              </li>
-              <li>
-                <a href="#0">Support</a>
-              </li>
-              <li>
-                <a href="#0">Contact</a>
-              </li>
-            </ul>
           </div>
 
           <div className={styles.footerWidget}>
@@ -91,7 +35,7 @@ export const Footer = () => {
         <div className={styles.footerBottom}>
           <div className={styles.footerMenu}>
             <ul>
-              {menuItems.map((item) => (
+              {footerItems.map((item) => (
                 <li key={item.label}>
                   <a href={item.href}>{item.label}</a>
                 </li>

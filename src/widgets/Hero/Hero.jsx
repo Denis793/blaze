@@ -4,18 +4,19 @@ import styles from './Hero.module.scss';
 
 export const Hero = () => {
   return (
-    <section id="home" className={styles.heroSection}>
+    <section id="home" className={styles.heroWrapper}>
       <div className="container">
-        <div className={styles.heroGrid}>
+        <div className={styles.heroSection}>
           <div className={styles.heroContent}>
             <h1>
               You are using free lite version of <span>Blaze</span>
             </h1>
-            <p>
+            <p className="description">
               Please, purchase full version of the template to get all sections, elements and permission to remove
               footer credits.
             </p>
-            <Button href="#0" variant="primary" className="btn-hover">
+
+            <Button href="#" variant="primary" className="btn-hover">
               Buy Now
             </Button>
           </div>

@@ -1,60 +1,109 @@
 @use '@/shared/styles/variables' as *;
 
 .newsletterSection {
-  background-color: var(--light-bg);
-  padding: 10rem 0;
+  background-color: var(--bg-section);
+  padding: var(--spacing-3xl) 0;
+
+  @media (min-width: $breakpoint-m) {
+    padding: var(--spacing-4xl) 0;
+  }
 }
 
 .newsletterInner {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: var(--gap-xl);
   align-items: center;
+  text-align: center;
 
-  @media (max-width: $breakpoint-l) {
-    grid-template-columns: 1fr;
-    text-align: center;
+  @media (min-width: $breakpoint-l) {
+    grid-template-columns: minmax(400px, 1fr) auto;
+    gap: var(--gap-2xl);
+    text-align: left;
   }
 }
 
 .contentWrapper {
-  h2 {
-    margin-bottom: 2rem;
-  }
-  p {
+  margin-bottom: var(--spacing-l);
+
+  @media (min-width: $breakpoint-l) {
     margin-bottom: 0;
   }
 
-  @media (max-width: $breakpoint-l) {
-    margin-bottom: 3rem;
+  h2 {
+    margin-bottom: var(--spacing-l);
+    font-size: var(--fs-h2);
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: var(--fs-base);
+    max-width: var(--description-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $breakpoint-l) {
+      margin-left: 0;
+    }
   }
 }
 
 .desktopBr {
-  display: block;
+  display: inline;
+
+  @media (min-width: $breakpoint-l) {
+    display: block;
+  }
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-l) {
+    max-width: none;
+    width: auto;
+  }
 }
 
 .newsletterForm {
   display: flex;
   align-items: center;
   position: relative;
-  background-color: var(--heading-color);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-s);
+  padding: var(--spacing-s);
+  border: 1px solid var(--border-color);
 
   input[type='email'] {
     width: 100%;
-    height: 5rem;
-    padding: 0 2rem;
+    height: 4.5rem;
+    padding: 0 var(--spacing-l);
     border: none;
     background: none;
-    font-size: 1.6rem;
+    font-size: var(--fs-input);
+    color: var(--text-color-default);
+
     &:focus {
       outline: none;
+    }
+
+    @media (min-width: $breakpoint-m) {
+      height: 5rem;
+      padding: 0 var(--spacing-xl);
     }
   }
 }
 
 .submitBtn {
   flex-shrink: 0;
+  padding: var(--spacing-m) var(--spacing-xl);
+  font-size: var(--fs-base);
+  height: 100%;
+
+  @media (min-width: $breakpoint-m) {
+    padding: var(--spacing-m) var(--spacing-2xl);
+    font-size: var(--fs-input);
+  }
 }

@@ -1,55 +1,55 @@
 @use '@/shared/styles/variables' as *;
 
-.heroSection {
-  padding-top: 18rem;
-  padding-bottom: 12rem;
+.heroWrapper {
+  padding: var(--spacing-3xl) 0;
   background: url('@/assets/images/hero/hero-bg.svg');
   background-size: cover;
+  background-position: center bottom;
 }
 
-.heroGrid {
-  display: grid;
-  grid-template-columns: minmax(auto, 50rem) 1fr;
-  gap: 3rem;
-  align-items: center;
+.heroSection {
+  position: relative;
+  padding: var(--spacing-3xl) 0;
 
-  @media (max-width: $breakpoint-l) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: $breakpoint-m) {
-    grid-template-columns: 1fr;
-    text-align: center;
+  @media (min-width: $breakpoint-m) {
+    padding: var(--spacing-4xl) 0;
   }
 }
 
 .heroContent {
-  h1 {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  width: 100%;
+  margin-bottom: var(--spacing-2xl);
 
-    span {
-      color: var(--primary-color);
-    }
+  @media (min-width: $breakpoint-m) {
+    width: 46%;
   }
-  p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
+
+  h1 {
+    span {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #fff;
+    }
   }
 }
 
-.heroImage {
-  text-align: right;
+.heroImage img {
+  width: 100%;
+  text-align: center;
 
-  img {
-    max-width: 100%;
-    height: auto;
+  @media (min-width: $breakpoint-m) {
+    position: absolute;
+    max-width: 50%;
+    top: 15%;
+    right: 0%;
   }
 
-  @media (max-width: $breakpoint-m) {
-    order: -1;
-    margin-bottom: 4rem;
-    text-align: center;
+  @media (min-width: $breakpoint-l) {
+    max-width: 70%;
+    right: -20%;
   }
 }

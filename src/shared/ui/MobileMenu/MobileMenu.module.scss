@@ -1,0 +1,98 @@
+@use '@/shared/styles/variables' as *;
+
+.toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3rem;
+  height: 2.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: var(--z-index-mobileMenu);
+  padding: 0;
+
+  @media (min-width: $breakpoint-m) {
+    display: none;
+  }
+}
+
+.togglerIcon {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--text-color-heading);
+  border-radius: 1px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.toggler.open {
+  & :nth-child(1) {
+    transform: translateY(1rem) rotate(45deg);
+  }
+
+  & :nth-child(2) {
+    opacity: 0;
+  }
+
+  & :nth-child(3) {
+    transform: translateY(-1rem) rotate(-45deg);
+  }
+}
+
+.menuBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 30rem;
+  height: 100vh;
+  background-color: var(--bg-page);
+  box-shadow: var(--shadow-main);
+  z-index: var(--z-index-mobileMenu) - 1;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  padding: 8rem var(--spacing-2xl) var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-l) {
+    display: none;
+  }
+}
+
+.menuBar.open {
+  transform: translateX(0);
+}
+
+.navbarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.navItem a {
+  font-size: var(--fs-nav-mobile);
+  font-weight: var(--fw-medium);
+  color: var(--text-color-default);
+  transition: var(--transition-fast);
+  display: block;
+  padding: var(--spacing-s) 0;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.navItem a.active {
+  color: var(--primary-color);
+}
+
+.headerBtnMobile {
+  display: block;
+}

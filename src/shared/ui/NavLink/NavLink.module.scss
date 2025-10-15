@@ -2,14 +2,12 @@
 
 .navLink {
   display: block;
-  font-size: 1.6rem;
   font-weight: 500;
-  color: var(--body-color);
-  padding: 1rem 0;
+  color: var(--text-color-link);
   position: relative;
 
   &:hover,
   &.active {
-    color: var(--primary-color);
+    color: var(--text-color-link-hover);
   }
 }

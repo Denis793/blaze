@@ -1,4 +1,4 @@
-export const featureBoxes = [
+export const servicesBoxes = [
   {
     iconClass: 'lni-display',
     title: 'SaaS Focused',

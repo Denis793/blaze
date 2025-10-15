@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '@/shared/layout/Header';
 import { Hero } from '@/widgets/Hero';
 import { Brands } from '@/widgets/Brands';
+import { Services } from './widgets/Services';
 import { Features } from '@/widgets/Features';
 import { Newsletter } from '@/widgets/Newsletter';
 import { Footer } from '@/shared/layout/Footer';
@@ -25,14 +26,11 @@ const App = () => {
       <main>
         <Hero />
         <Brands />
+        <Services />
         <Features />
         <Newsletter />
       </main>
       <Footer />
-
-      <a href="#home" className="scroll-top btn-hover">
-        <i className="lni lni-chevron-up"></i>
-      </a>
     </>
   );
 };
