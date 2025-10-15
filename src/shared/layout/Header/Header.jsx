@@ -2,29 +2,33 @@ import { useState } from 'react';
 import { Logo } from '@/shared/ui/Logo';
 import { Button } from '@/shared/ui/Button';
 import { NavLink } from '@/shared/ui/NavLink';
+import { navItems } from '@/shared/config/headerConfig';
+import { useHeaderScroll } from '@/shared/hooks/useHeaderScroll';
 import styles from './Header.module.scss';
-
-const navItems = [
-  { href: '#home', label: 'Home', isActive: true },
-  { href: '#features', label: 'Features' },
-  { href: '#0', label: 'Team' },
-  { href: '#0', label: 'Testimonial' },
-  { href: '#0', label: 'Pricing' },
-];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { scrolled, scrollDirection } = useHeaderScroll(80);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const headerClasses = [
+    styles.header,
+    scrolled ? styles.headerScrolled : '',
+    scrolled && scrollDirection === 'down' ? styles.hidden : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <header className={styles.header}>
-      <div className={styles.navbarArea}>
+    <header className={headerClasses}>
+      <div className={`${styles.navbarArea} ${scrolled ? styles.navbarAreaScrolled : ''}`}>
         <div className="container">
           <nav className={styles.navbar}>
-            <Logo href="index.html" />
+            <Logo href="#home" isScrolled={scrolled} />
 
             <button className={styles.toggler} onClick={toggleMenu} aria-label="Toggle navigation">
               <span className={styles.togglerIcon}></span>
@@ -36,7 +40,7 @@ export const Header = () => {
               <ul className={styles.navbarNav}>
                 {navItems.map((item) => (
                   <li key={item.label} className={styles.navItem}>
-                    <NavLink href={item.href} isActive={item.isActive}>
+                    <NavLink href={item.href} isActive={item.isActive} onClick={() => setIsMenuOpen(false)}>
                       {item.label}
                     </NavLink>
                   </li>

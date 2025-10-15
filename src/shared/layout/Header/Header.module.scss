@@ -1,15 +1,38 @@
 @use '@/shared/styles/variables' as *;
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbarArea {
   padding: 1.5rem 0;
+  transition: padding 0.3s ease-in-out;
+}
+
+.headerScrolled {
+  background-color: var(--header-color);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+
+  .navbarArea {
+    padding: 0.5rem 0;
+  }
+
+  .navbarNav a {
+    color: var(--title-color) !important;
+  }
+
+  .togglerIcon {
+    background-color: var(--title-color);
+  }
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
 
 .navbar {
@@ -37,7 +60,7 @@
   display: block;
   width: 2.5rem;
   height: 0.2rem;
-  background-color: var(--color-h2);
+  background-color: var(--heading-color);
   margin: 0.5rem 0;
   transition: all 0.3s ease-in-out;
 }
@@ -54,9 +77,9 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: var(--header-color);
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: var(--spacer-md) 0;
   }
 }
 
@@ -69,9 +92,19 @@
   list-style: none;
   margin-right: 3rem;
 
+  a {
+    transition: color 0.3s ease-in-out;
+    color: var(--heading-color);
+    font-weight: var(--font-weight-normal);
+  }
+
   @media (max-width: $breakpoint-m) {
     flex-direction: column;
-    padding: 1rem 3rem;
+    padding: var(--spacer-md) 3rem;
+
+    a {
+      color: var(--title-color);
+    }
   }
 }
 
@@ -81,7 +114,8 @@
   @media (max-width: $breakpoint-m) {
     margin: 0;
     a {
-      padding: 1rem 0;
+      padding: var(--spacer-md) 0;
+      display: block;
     }
   }
 }

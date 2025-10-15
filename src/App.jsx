@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '@/layout/Header';
+import { Header } from '@/shared/layout/Header';
 import { Hero } from '@/widgets/Hero';
 import { Brands } from '@/widgets/Brands';
 import { Features } from '@/widgets/Features';
 import { Newsletter } from '@/widgets/Newsletter';
-import { Footer } from '@/layout/Footer';
+import { Footer } from '@/shared/layout/Footer';
 import { Preloader } from '@/shared/ui/Preloader';
 
 const App = () => {
