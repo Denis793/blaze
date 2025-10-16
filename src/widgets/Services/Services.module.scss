@@ -14,6 +14,7 @@
 .services {
   text-align: center;
   max-width: 100%;
+  padding: var(--spacing-xl);
   @media (min-width: $breakpoint-m) {
     max-width: 28%;
   }
