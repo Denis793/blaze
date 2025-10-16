@@ -7,8 +7,8 @@ Modern, responsive landing page template for SaaS products, agencies, and startu
 ## 📸 Preview
 
 <p align="center">
-  <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/View%20Live%20Site-Not%20deployed-lightgrey?style=for-the-badge" alt="View Project">
+  <a href="https://blaze-kappa-bay.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Live%20Site-Click%20Here-blue?style=for-the-badge" alt="View Project">
   </a>
 </p>
 
