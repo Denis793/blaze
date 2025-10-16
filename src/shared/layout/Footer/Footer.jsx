@@ -2,38 +2,46 @@ import styles from './Footer.module.scss';
 import { Logo } from '@/shared/ui/Logo';
 import { Button } from '@/shared/ui/Button';
 import { footerItems, socialLinks } from '@/shared/config/menuConfig';
+import { isValidEmail } from '@/shared/utils/validators';
+import { useState } from 'react';
 
 export const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isValidEmail(email)) {
+      setStatus('invalid');
+      return;
+    }
+    setStatus('loading');
+    setTimeout(() => {
+      setStatus('ok');
+      setEmail('');
+    }, 700);
+  };
+
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} aria-labelledby="footer-heading">
       <div className="container">
-        <div className={styles.footerTop}>
-          <div className={styles.footerWidget}>
-            <div className={styles.footerLogo}>
-              <Logo href="#0" />
-            </div>
-            <p className={styles.text}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste
-              ipsum officiis deleniti asperiores sit.
+        <div className={styles.layout}>
+          <div className={styles.brand}>
+            <Logo href="#home" />
+            <p className={styles.description}>
+              Blaze — modern landing UI kit. Built with attention to performance and accessibility.
             </p>
-          </div>
-
-          <div className={styles.footerWidget}>
-            <h4 className={styles.widgetTitle}>Newsletter</h4>
-            <div className={styles.newsletterFormWrapper}>
-              <form action="#" method="POST" className={styles.newsletterForm}>
-                <input type="email" placeholder="Email address" required />
-                <Button type="submit" variant="primary" className={styles.submitBtn}>
-                  <i className="lni lni-chevron-right"></i>
-                </Button>
-              </form>
+            <div className={styles.social} aria-label="social links">
+              {socialLinks.map((s) => (
+                <a key={s.icon} href={s.href} className={styles.socialItem} aria-label={s.icon}>
+                  <i className={`lni ${s.icon}`} />
+                </a>
+              ))}
             </div>
-            <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
           </div>
-        </div>
 
-        <div className={styles.footerBottom}>
-          <div className={styles.footerMenu}>
+          <nav className={styles.links} aria-label="primary">
+            <h4 className={styles.sectionTitle}>Explore</h4>
             <ul>
               {footerItems.map((item) => (
                 <li key={item.label}>
@@ -41,24 +49,56 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className={styles.footerSocial}>
+          </nav>
+
+          <div className={styles.links} aria-label="resources">
+            <h4 className={styles.sectionTitle}>Resources</h4>
             <ul>
-              {socialLinks.map((link) => (
-                <li key={link.icon}>
-                  <a href={link.href}>
-                    <i className={`lni ${link.icon}`}></i>
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="#0">Documentation</a>
+              </li>
+              <li>
+                <a href="#0">Changelog</a>
+              </li>
+              <li>
+                <a href="#0">Support</a>
+              </li>
             </ul>
+          </div>
+
+          <div className={styles.newsletter}>
+            <h4 className={styles.sectionTitle}>Stay up to date</h4>
+            <p className={styles.description}>Subscribe to our newsletter to get the latest updates.</p>
+            <form className={styles.form} onSubmit={handleSubmit} noValidate>
+              <label htmlFor="footer-email" className={styles.visuallyHidden}>
+                Email address
+              </label>
+              <input
+                id="footer-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@company.com"
+                className={styles.input}
+                required
+              />
+              <Button type="submit" variant="primary" className={styles.cta}>
+                Subscribe
+              </Button>
+            </form>
+            {status === 'invalid' && <p className={styles.error}>Please enter a valid email.</p>}
+            {status === 'ok' && <p className={styles.success}>Thanks for subscribing!</p>}
+          </div>
+        </div>
+
+        <div className={styles.footerMeta}>
+          <p className={styles.copy}>&copy; {new Date().getFullYear()} Blaze. All rights reserved.</p>
+          <div className={styles.bottomLinks}>
+            <a href="#0">Privacy</a>
+            <a href="#0">Terms</a>
           </div>
         </div>
       </div>
-
-      <a href="#top" className={styles.scrollTop}>
-        <i className="lni lni-chevron-up"></i>
-      </a>
     </footer>
   );
 };

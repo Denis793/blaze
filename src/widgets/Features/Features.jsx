@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import classNames from 'classnames';
 import { Button } from '@/shared/ui/Button';
-import { smallFeaturesList } from '@/data/featureData';
+import { features } from '@/shared/data/featuresData';
 import FeatureImageOne from '@/assets/images/feature/feature-image-1.svg';
 import FeatureImageTwo from '@/assets/images/feature/feature-image-2.svg';
 import styles from './Features.module.scss';
@@ -11,7 +11,7 @@ const BASE_INDENT_REM = 2;
 export const Features = () => {
   return (
     <>
-      <section className={styles.featureWrapper}>
+      <section id="features" className={styles.featureWrapper}>
         <div className="container">
           <div id="feature-one" className={styles.featureSection}>
             <div className={styles.featureGrid}>
@@ -47,13 +47,13 @@ export const Features = () => {
                   </h2>
 
                   <div className={styles.featuresList}>
-                    {smallFeaturesList.map((feature, index) => (
+                    {features.map((feature, index) => (
                       <div
                         key={index}
                         className={styles.singleFeatureListItem}
-                        style={{ marginLeft: `${index * 2 * BASE_INDENT_REM}rem` }}
+                        style={{ ['--indent']: `${index * 2 * BASE_INDENT_REM}rem` }}
                       >
-                        <div className={classNames(styles.featureIconSmall, styles[feature.color])}>
+                        <div className={classNames(styles.featureIconSmall, feature.color)}>
                           <i className={`lni ${feature.iconClass}`}></i>
                         </div>
                         <div className={styles.featureContentSmall}>

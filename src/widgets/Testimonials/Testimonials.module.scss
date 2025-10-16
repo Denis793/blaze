@@ -1,0 +1,79 @@
+@use '@/shared/styles/variables' as *;
+
+.testimonials {
+  padding: var(--spacing-2xl) 0;
+}
+
+.header {
+  margin-bottom: var(--spacing-l);
+  text-align: center;
+
+  h2 {
+    margin-bottom: var(--spacing-m);
+  }
+}
+
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+
+  @media (min-width: $breakpoint-m) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: var(--gap-m);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-l);
+  box-shadow: var(--shadow-sm);
+}
+
+.imageCard {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.star {
+  color: var(--accent-star, #f5b301);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.role {
+  font-size: var(--fs-base);
+  color: var(--color-description);
+}
+
+.company {
+  font-size: var(--fs-base);
+  color: var(--primary-color);
+  font-weight: var(--fw-medium);
+}
+
+.description {
+  margin: 0;
+}

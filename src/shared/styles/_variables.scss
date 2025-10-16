@@ -4,7 +4,6 @@
   --fs-body: 10px;
   --fs-base: 1.25rem;
   --fs-nav-mobile: 2rem;
-  --fs-nav-laptop: 1rem;
   --fs-nav-desktop: 1.2rem;
 
   --fs-h1: 4rem;
@@ -13,15 +12,9 @@
   --fs-h4: 1.5rem;
   --fs-description: 1rem;
   --fs-input: 1.2rem;
-  --fs-error-code: 10rem;
 
-  --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
-  --fw-bold: 700;
-
-  --toggle-size: 1.5rem;
-  --social-size: 1.5rem;
 
   /* === Colors (light) === */
   --primary-color: #005ff7;
@@ -29,13 +22,9 @@
 
   --text-color-default: #1d2125;
   --text-color-heading: #111827;
-  --text-color-subheading: #1f2937;
-  --text-color-contrast: #292929;
   --text-color-button: #fff;
-  --text-color-link: #000000;
-  --text-color-link-hover: #ffffff;
-  --error-color: #ff0000b4;
-  --success-color: #00ad26;
+  --text-color-link: #ffffff;
+  --text-color-link-hover: #40a3ff;
 
   --color-h2: #202020;
   --color-h3: #303030;
@@ -46,12 +35,9 @@
   --bg-page: #fff;
   --bg-section: #f4f7fa;
   --bg-card: #fff;
-  --bg-header: rgba(255, 255, 255, 0.6);
-
+  --bg-header: rgba(143, 188, 255, 0.493);
   --border-color: #d8e1ed;
   --burger-color: #111827;
-  --border-error: #ff0000c7;
-  --border-success: #00ad26;
 
   /* === Accent Colors === */
   --accent-color1: #4254f5;
@@ -61,16 +47,11 @@
   --social-color: #fff;
 
   /* === Shadows === */
-  --shadow-main: 0 0px 12px rgba(0, 0, 0, 0.2);
-  --shadow-overlay: 0 0px 12px rgba(0, 0, 0, 0.5);
-
-  /* === Overlay Colors === */
-  --overlay-color: #fff;
+  --shadow-main: 0 0 12px rgba(0, 0, 0, 0.315);
 
   /* === Radius === */
   --radius-s: 0.5rem;
   --radius-m: 1rem;
-  --radius-l: 2rem;
   --radius-full: 50%;
 
   /* === Spacing === */
@@ -88,16 +69,10 @@
   --gap-xl: 2rem;
   --gap-2xl: 4rem;
 
-  --header-logo-height: 1rem;
-
   /* === Layout === */
-  --container-max-width: 1280px;
-  --description-width: 600px;
+  --container-max-width: 1320px;
 
   /* === Z-index === */
-  --z-index-behind: -1;
-  --z-index-base: 1;
-  --z-index-overlay: 900;
   --z-header: 999;
   --z-index-mobileMenu: 1000;
 

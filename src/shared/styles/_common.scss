@@ -12,6 +12,10 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--ff-main);
   font-size: var(--fs-body);
@@ -92,14 +96,26 @@ li {
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-xl);
+  padding: var(--spacing-3xl) var(--spacing-xl);
 
   @media (min-width: $breakpoint-m) {
-    padding: 0 var(--spacing-2xl);
+    padding: var(--spacing-3xl) var(--spacing-2xl);
   }
 }
 
 .description {
   font-size: var(--fs-description);
   color: var(--color-description);
+}
+
+.color1 {
+  background-color: var(--accent-color1);
+}
+
+.color2 {
+  background-color: var(--accent-color2);
+}
+
+.color3 {
+  background-color: var(--accent-color3);
 }

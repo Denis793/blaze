@@ -30,31 +30,29 @@ export const Header = () => {
   return (
     <header className={headerClasses}>
       <div className={clsx(styles.navbarArea, scrolled && styles.navbarAreaScrolled)}>
-        <div className="container">
-          <nav className={styles.navbar}>
-            <Logo href="#home" isScrolled={scrolled} />
+        <nav className={styles.navbar}>
+          <Logo href="#home" isScrolled={scrolled} />
 
-            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} closeMenu={closeMenu} />
+          <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} closeMenu={closeMenu} />
 
-            <div className={styles.menuBarDesktop}>
-              <ul className={styles.navbarNavDesktop}>
-                {headerItems.map((item) => (
-                  <li key={item.label} className={styles.navItemDesktop}>
-                    <NavLink href={item.href} isActive={item.isActive}>
-                      {item.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
+          <div className={styles.menuBarDesktop}>
+            <ul className={styles.navbarNavDesktop}>
+              {headerItems.map((item) => (
+                <li key={item.label} className={styles.navItemDesktop}>
+                  <NavLink href={item.href} isActive={item.isActive}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
 
-              <div className={styles.headerBtnDesktop}>
-                <Button href="#" variant="primary" className={styles.headerButton}>
-                  Download
-                </Button>
-              </div>
+            <div className={styles.headerBtnDesktop}>
+              <Button href="#" variant="primary" className={styles.headerButton}>
+                Download
+              </Button>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
     </header>
   );

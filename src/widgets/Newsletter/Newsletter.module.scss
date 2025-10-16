@@ -10,23 +10,22 @@
 }
 
 .newsletterInner {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--gap-xl);
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
 
-  @media (min-width: $breakpoint-l) {
-    grid-template-columns: minmax(400px, 1fr) auto;
-    gap: var(--gap-2xl);
-    text-align: left;
+  @media (min-width: $breakpoint-m) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .contentWrapper {
   margin-bottom: var(--spacing-l);
 
-  @media (min-width: $breakpoint-l) {
+  @media (min-width: $breakpoint-m) {
     margin-bottom: 0;
   }
 
@@ -56,54 +55,53 @@
   }
 }
 
-.formWrapper {
+.newsBlock {
+  background: var(--bg-card);
+  border-radius: var(--radius-s);
+  padding: var(--spacing-l);
+  border: 1px solid var(--border-color);
+  max-width: 48rem;
   width: 100%;
-  max-width: 45rem;
-  margin: 0 auto;
-
-  @media (min-width: $breakpoint-l) {
-    max-width: none;
-    width: auto;
-  }
 }
 
-.newsletterForm {
+.newsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.newsItem {
+  padding: calc(var(--spacing-s) + 0.25rem) 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.04);
+}
+
+.newsLink {
   display: flex;
   align-items: center;
-  position: relative;
-  background-color: var(--bg-card);
-  border-radius: var(--radius-s);
-  padding: var(--spacing-s);
-  border: 1px solid var(--border-color);
-
-  input[type='email'] {
-    width: 100%;
-    height: 4.5rem;
-    padding: 0 var(--spacing-l);
-    border: none;
-    background: none;
-    font-size: var(--fs-input);
-    color: var(--text-color-default);
-
-    &:focus {
-      outline: none;
-    }
-
-    @media (min-width: $breakpoint-m) {
-      height: 5rem;
-      padding: 0 var(--spacing-xl);
-    }
-  }
+  justify-content: space-between;
+  gap: var(--spacing-m);
+  text-decoration: none;
+  color: var(--text-color-default);
 }
 
-.submitBtn {
-  flex-shrink: 0;
-  padding: var(--spacing-m) var(--spacing-xl);
-  font-size: var(--fs-base);
-  height: 100%;
+.newsTitle {
+  font-weight: var(--fw-medium);
+}
+
+.newsMeta {
+  font-size: 0.9rem;
+  color: var(--color-description);
+}
+
+.newsFooter {
+  margin-top: var(--spacing-m);
+  display: flex;
+  justify-content: center;
 
   @media (min-width: $breakpoint-m) {
-    padding: var(--spacing-m) var(--spacing-2xl);
-    font-size: var(--fs-input);
+    justify-content: flex-end;
   }
 }

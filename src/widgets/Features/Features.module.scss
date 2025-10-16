@@ -1,9 +1,7 @@
 @use '@/shared/styles/variables' as *;
 
 .featureWrapper {
-  padding: var(--section-padding) 0;
   overflow: hidden;
-  margin: var(--spacing-4xl) 0;
 }
 
 .featureSection {
@@ -50,6 +48,11 @@
   max-width: 100%;
   height: auto;
   margin: var(--spacing-3xl) 0;
+  display: none;
+
+  @media (min-width: $breakpoint-m) {
+    display: block;
+  }
 
   &One {
     transform: translateX(0);
@@ -82,6 +85,11 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-m);
+  margin-left: 0; /* No cascade on mobile */
+
+  @media (min-width: $breakpoint-m) {
+    margin-left: var(--indent, 0);
+  }
 }
 
 .featureIconSmall {
@@ -100,16 +108,4 @@
     height: 7rem;
     font-size: 3rem;
   }
-}
-
-.color1 {
-  background-color: var(--accent-color1);
-}
-
-.color2 {
-  background-color: var(--accent-color2);
-}
-
-.color3 {
-  background-color: var(--accent-color3);
 }

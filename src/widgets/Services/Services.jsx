@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './Services.module.scss';
-import { servicesBoxes } from '@/data/featureData';
+import { features } from '@/shared/data/featuresData';
 
 export const Services = () => {
   return (
@@ -12,9 +12,9 @@ export const Services = () => {
         </h2>
 
         <div className={styles.serviceBoxes}>
-          {servicesBoxes.map((service, index) => (
+          {features.map((service, index) => (
             <div key={index} className={styles.services}>
-              <div className={clsx(styles.serviceIcon, styles[service.color])}>
+              <div className={clsx(styles.serviceIcon, service.color)}>
                 <i className={`lni ${service.iconClass}`}></i>
               </div>
 

@@ -7,7 +7,11 @@
   width: 100%;
   z-index: var(--z-header);
   background-color: transparent;
-  transition: transform var(--transition-base), background-color var(--transition-base);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease, background-color 0.25s ease;
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: var(--spacing-xl) 0;
 }
 
 .headerScrolled {
@@ -17,11 +21,13 @@
 }
 
 .hidden {
-  transform: translateY(-100%);
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbarArea {
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 1s ease-in-out;
 }
 
 .navbar {
@@ -29,6 +35,8 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
 
 .menuBarDesktop {
@@ -44,14 +52,13 @@
 
 .navbarNavDesktop {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  gap: var(--gap-2xl);
+  gap: var(--gap-xl);
   a {
     font-size: var(--fs-nav-desktop);
     font-weight: var(--fw-medium);
     color: var(--text-color-link);
+    text-shadow: var(--shadow-main);
     transition: var(--transition-fast);
 
     &:hover {

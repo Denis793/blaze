@@ -1,17 +1,17 @@
 export const headerItems = [
   { href: '#home', label: 'Home', isActive: true },
   { href: '#features', label: 'Features' },
-  { href: '#0', label: 'Team' },
-  { href: '#0', label: 'Testimonial' },
-  { href: '#0', label: 'Pricing' },
+  { href: '#services', label: 'Services' },
+  { href: '#testimonial', label: 'Testimonial' },
+  { href: '#news', label: 'News' },
 ];
 
 export const footerItems = [
-  { href: '#0', label: 'Home' },
-  { href: '#0', label: 'About' },
-  { href: '#0', label: 'Service' },
-  { href: '#0', label: 'Testimonial' },
-  { href: '#0', label: 'Contact' },
+  { href: '#home', label: 'Home' },
+  { href: '#features', label: 'Features' },
+  { href: '#services', label: 'Services' },
+  { href: '#testimonial', label: 'Testimonial' },
+  { href: '#news', label: 'News' },
 ];
 
 export const socialLinks = [

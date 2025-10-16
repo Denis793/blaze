@@ -2,8 +2,13 @@
 
 .serviceBoxes {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin: var(--spacing-2xl) 0;
+  margin: var(--spacing-2xl);
+
+  @media (min-width: $breakpoint-m) {
+    flex-direction: row;
+  }
 }
 
 .services {
@@ -38,16 +43,4 @@
 
 .serviceContent h4 {
   margin: var(--spacing-2xl) 0;
-}
-
-.color1 {
-  background-color: var(--accent-color1);
-}
-
-.color2 {
-  background-color: var(--accent-color2);
-}
-
-.color3 {
-  background-color: var(--accent-color3);
 }
