@@ -119,3 +119,22 @@ li {
 .color3 {
   background-color: var(--accent-color3);
 }
+
+.error,
+.success {
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-m);
+  font-size: var(--fs-base);
+  border-radius: var(--radius-m);
+  width: fit-content;
+}
+
+.error {
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.success {
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}

@@ -86,8 +86,8 @@ export const Footer = () => {
                 Subscribe
               </Button>
             </form>
-            {status === 'invalid' && <p className={styles.error}>Please enter a valid email.</p>}
-            {status === 'ok' && <p className={styles.success}>Thanks for subscribing!</p>}
+            {status === 'invalid' && <p className="error">Please enter a valid email.</p>}
+            {status === 'ok' && <p className="success">Thanks for subscribing!</p>}
           </div>
         </div>
 

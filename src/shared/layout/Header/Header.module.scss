@@ -11,7 +11,11 @@
   will-change: transform, opacity;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-l);
+
+  @media (min-width: $breakpoint-m) {
+    padding: var(--spacing-l) 0;
+  }
 }
 
 .headerScrolled {
